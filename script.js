@@ -1,12 +1,26 @@
-  
-//Function to update current city with the city entered by the users and to prevent the browser from refreshing the page.  
+
+// Function to show the weather for the city entered by the users and get current temperature data 
+  function showTemperature(response) {
+    let data = response.data;
+    let currentCity = document.querySelector("#current-city");
+    currentCity.innerHTML = data.city;
+    let temperatureElement = document.querySelector("#temperature-value");
+    temperatureElement.innerHTML = Math.round(data.temperature.current);
+  }  
+
+
+//Function to update current city with the city entered by the users, to prevent the browser from refreshing the page & 
+//calling the fuction to fetch current weather info from the weather API with Axios.  
   
   function updateCity(event){
     event.preventDefault();
     let searchInput = document.querySelector("#search-city");
-    let currentCity = document.querySelector("#current-city");
-    currentCity.innerHTML = searchInput.value;
-    console.log(searchInput.value);
+    let city = searchInput.value;
+
+  
+    let apiKey = "b125a59f9afa4ebc141352te1ao60a9c";
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(showTemperature);
   }
 
 
@@ -34,7 +48,7 @@
 
 
 
-//Calling the function to update the city to the city entered by the user
+//Calling the function to update the city to the city entered by the user and updating to the current weather info
 let changeCity = document.querySelector("#search-form");
 changeCity.addEventListener("submit", updateCity);
 
