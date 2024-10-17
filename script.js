@@ -1,12 +1,19 @@
 
-// Function to show the weather for the city entered by the users and get current temperature data 
+// Function to show the weather for the city entered by the users and get current weather data (temp, wind, humidity & condition) 
   function showTemperature(response) {
     let data = response.data;
     let currentCity = document.querySelector("#current-city");
-    currentCity.innerHTML = data.city;
     let temperatureElement = document.querySelector("#temperature-value");
+    let humidityElement = document.querySelector("#humidity");
+    let windElement = document.querySelector("#wind");
+    let descriptionElement = document.querySelector("#description");
+
+    currentCity.innerHTML = data.city;
     temperatureElement.innerHTML = Math.round(data.temperature.current);
-  }  
+    humidityElement.innerHTML = `${data.temperature.humidity}%`;
+    windElement.innerHTML = `${Math.round(data.wind.speed)} km/h`;
+    descriptionElement.innerHTML = data.condition.description;
+}  
 
 
 //Function to update current city with the city entered by the users, to prevent the browser from refreshing the page & 
