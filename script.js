@@ -7,12 +7,14 @@
     let humidityElement = document.querySelector("#humidity");
     let windElement = document.querySelector("#wind");
     let descriptionElement = document.querySelector("#description");
-
+    let iconElement = document.querySelector("#temperature-icon");
+    
     currentCity.innerHTML = data.city;
     temperatureElement.innerHTML = Math.round(data.temperature.current);
     humidityElement.innerHTML = `${data.temperature.humidity}%`;
     windElement.innerHTML = `${Math.round(data.wind.speed)} km/h`;
     descriptionElement.innerHTML = data.condition.description;
+    iconElement.setAttribute("src", data.condition.icon_url);
 }  
 
 
