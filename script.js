@@ -1,5 +1,6 @@
 
-// Function to show the weather for the city entered by the users and get current weather data (temp, wind, humidity & condition) 
+// Function to get current weather data (temp, wind, humidity & condition) for the city entered by the users.
+
   function showTemperature(response) {
     let data = response.data;
     let currentCity = document.querySelector("#current-city");
@@ -18,31 +19,27 @@
 } 
 
 
-//Function to fetch and show the weather data for a specific city
+// Function to fetch and display weather data for a specific city and retrieve current weather information from the API using Axios.
+
   function getWeatherData(city){
     let apiKey = "b125a59f9afa4ebc141352te1ao60a9c";
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
     axios.get(apiUrl).then(showTemperature);
-
   }
 
 
-
-
-//Function to update current city with the city entered by the users, to prevent the browser from refreshing the page & 
-//calling the fuction to fetch current weather info from the weather API with Axios.  
+// Function to update the displayed city based on user input and prevent page refresh.
   
   function updateCity(event){
     event.preventDefault();
     let searchInput = document.querySelector("#search-city");
     let city = searchInput.value;
-    getWeatherData(city); //Fetch weather data for the city entered by the users
-
-  
+    getWeatherData(city); //Fetch weather data for the city entered by the users.
   }
 
 
-//Updating the date to current date
+// Function to format and display the current date and time.
+
   function formatDate(date){
 
     let day = date.getDay();  
@@ -66,14 +63,16 @@
 
 
 
-//Calling the function to update the city to the city entered by the user and updating to the current weather info
+// Event listener to update the city with user input and display current weather info.
+
 let changeCity = document.querySelector("#search-form");
 changeCity.addEventListener("submit", updateCity);
-getWeatherData("Poznan");
+getWeatherData("Poznan"); // Calling function to display current weather data for the default city.
 
 
 
-//Calling the function to show the current date
+//Calling the function to display the current date.
+
 let currentUpdatedDate = document.querySelector("#current-date-info");
 let currentDate = new Date();
 currentUpdatedDate.innerHTML = formatDate(currentDate); 
