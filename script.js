@@ -15,7 +15,18 @@
     windElement.innerHTML = `${Math.round(data.wind.speed)} km/h`;
     descriptionElement.innerHTML = data.condition.description;
     iconElement.setAttribute("src", data.condition.icon_url);
-}  
+} 
+
+
+//Function to fetch and show the weather data for a specific city
+  function getWeatherData(city){
+    let apiKey = "b125a59f9afa4ebc141352te1ao60a9c";
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(showTemperature);
+
+  }
+
+
 
 
 //Function to update current city with the city entered by the users, to prevent the browser from refreshing the page & 
@@ -25,11 +36,9 @@
     event.preventDefault();
     let searchInput = document.querySelector("#search-city");
     let city = searchInput.value;
+    getWeatherData(city); //Fetch weather data for the city entered by the users
 
   
-    let apiKey = "b125a59f9afa4ebc141352te1ao60a9c";
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(showTemperature);
   }
 
 
@@ -60,6 +69,7 @@
 //Calling the function to update the city to the city entered by the user and updating to the current weather info
 let changeCity = document.querySelector("#search-form");
 changeCity.addEventListener("submit", updateCity);
+getWeatherData("Poznan");
 
 
 
