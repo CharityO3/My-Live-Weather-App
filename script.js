@@ -6,14 +6,17 @@
     let currentCity = document.querySelector("#current-city");
     let temperatureElement = document.querySelector("#temperature-value");
     let humidityElement = document.querySelector("#humidity");
-    let windElement = document.querySelector("#wind");
+    let windSpeedElement = document.querySelector("#wind-speed");
     let descriptionElement = document.querySelector("#description");
     let iconElement = document.querySelector("#temperature-icon");
+    let timeElement = document.querySelector("#current-date-info")
+    let date = new Date(response.data.time * 1000);
     
+    timeElement.innerHTML = formatDate(date);
     currentCity.innerHTML = data.city;
     temperatureElement.innerHTML = Math.round(data.temperature.current);
     humidityElement.innerHTML = `${data.temperature.humidity}%`;
-    windElement.innerHTML = `${Math.round(data.wind.speed)} km/h`;
+    windSpeedElement.innerHTML = `${Math.round(data.wind.speed)} km/h`;
     descriptionElement.innerHTML = data.condition.description;
     iconElement.setAttribute("src", data.condition.icon_url);
 } 
@@ -73,6 +76,6 @@ getWeatherData("Poznan"); // Calling function to display current weather data fo
 
 //Calling the function to display the current date.
 
-let currentUpdatedDate = document.querySelector("#current-date-info");
-let currentDate = new Date();
-currentUpdatedDate.innerHTML = formatDate(currentDate); 
+//let currentUpdatedDate = document.querySelector("#current-date-info");
+//let currentDate = new Date();
+//currentUpdatedDate.innerHTML = formatDate(currentDate); 
