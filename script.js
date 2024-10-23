@@ -12,7 +12,7 @@
     let timeElement = document.querySelector("#current-date-info")
     let date = new Date(response.data.time * 1000);
     
-    timeElement.innerHTML = formatDate(date);
+    timeElement.innerHTML = formatDate(date); //Calling the function to display the current date.
     currentCity.innerHTML = data.city;
     temperatureElement.innerHTML = Math.round(data.temperature.current);
     humidityElement.innerHTML = `${data.temperature.humidity}%`;
@@ -64,6 +64,29 @@
 
   }
 
+  function displayForecast(){
+    let days = ["Tue", "Wed", "Thur", "Fri", "Sat"];
+    let forecastHtml = "";
+
+    days.forEach (function (day){
+      forecastHtml = forecastHtml + 
+      `
+        <div class="weather-forecast-day">
+          <div class="weather-forecast-date">${day}</div>
+          <div class="weather-forecast-icon">⛅</div>
+          <div class="weather-forecast-temperatures">
+              <div class="weather-forecast-temperature"><strong>15°</strong></div>
+              <div class="weather-forecast-temperature">14°</div>       
+          </div>
+        </div>  
+      `;
+    });
+    let forecastElement = document.querySelector("#forecast");
+    forecastElement.innerHTML = forecastHtml;
+    
+  }
+
+
 
 
 // Event listener to update the city with user input and display current weather info.
@@ -72,10 +95,6 @@ let changeCity = document.querySelector("#search-form");
 changeCity.addEventListener("submit", updateCity);
 getWeatherData("Poznan"); // Calling function to display current weather data for the default city.
 
+displayForecast();
 
 
-//Calling the function to display the current date.
-
-//let currentUpdatedDate = document.querySelector("#current-date-info");
-//let currentDate = new Date();
-//currentUpdatedDate.innerHTML = formatDate(currentDate); 
