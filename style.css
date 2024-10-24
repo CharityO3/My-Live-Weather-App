@@ -137,24 +137,4 @@ footer {
 .code-credit{
   font-size: 13px;
 }
- /* Media Queries for Responsiveness */
- @media (min-width: 768px) {
-  .current-weather {
-    flex-direction: row; /* Side by side on larger screens */
-  }
-  .current-temperature-info {
-    margin-left: 10px;
-  }
-  .current-city {
-    font-size: 38px; /* Larger font size for larger screens */
-  }
-  .current-weather-details {
-    font-size: 16px; /* Larger font size for larger screens */
-  }
-  .current-temperature-value {
-    font-size: 88px; /* Larger font size for larger screens */
-  }
-  .weather-forecast {
-    flex-direction: row; /* Side by side on larger screens */
-  }
- }
+ 
