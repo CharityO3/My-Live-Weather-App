@@ -1,4 +1,4 @@
-# Weather Application
+# Live Weather Application
 
 This weather application, built with HTML, CSS, and JavaScript, allows users to check the current weather and a five-day forecast for any city. 
 
