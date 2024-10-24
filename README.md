@@ -15,5 +15,7 @@ This weather application, built with HTML, CSS, and JavaScript, allows users to 
 ## API
 Fetches data from the SheCodes Weather API. Obtain your own API key from [SheCodes](https://shecodes.io/) to use the application.
 
-## Acknowledgments
+View hosted App on Netlify: https://my-live-weather-app.netlify.app/
+
+## Author
 Coded by [Charity Orhoridiohwo](https://www.linkedin.com/in/charity-orhoridiohwo-548873150/). Open-sourced on [GitHub](https://github.com/CharityO3/My-Live-Weather-App) and hosted on [Netlify](https://my-live-weather-app.netlify.app/). Contributions are welcome!
