@@ -12,13 +12,17 @@
     let timeElement = document.querySelector("#current-date-info")
     let date = new Date(response.data.time * 1000);
     
-    timeElement.innerHTML = formatDate(date); //Calling the function to display the current date.
+    //timeElement.innerHTML = formatDate(date); //Calling the function to display the current date.
     currentCity.innerHTML = data.city;
     temperatureElement.innerHTML = Math.round(data.temperature.current);
     humidityElement.innerHTML = `${data.temperature.humidity}%`;
     windSpeedElement.innerHTML = `${Math.round(data.wind.speed)} km/h`;
     descriptionElement.innerHTML = data.condition.description;
     iconElement.setAttribute("src", data.condition.icon_url);
+
+    let timezone = moment.tz.guess(); // Attempting to detect timezone using Moment's guess
+    let formattedTime = moment().tz(timezone).format("dddd HH:mm");
+    timeElement.innerHTML = formattedTime;
 
     getForecast(response.data.city);
 } 
@@ -45,7 +49,7 @@
 
 // Function to format and display the current date and time.
 
-  function formatDate(date){
+  /*function formatDate(date){
 
     let day = date.getDay();  
 
@@ -64,7 +68,7 @@
 
     return `${newDay} ${hours}:${minutes}`;
 
-  }
+  }*/
 
   function formatDay(timestamp){
     let date = new Date(timestamp * 1000);
