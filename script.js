@@ -10,9 +10,9 @@
     let descriptionElement = document.querySelector("#description");
     let iconElement = document.querySelector("#temperature-icon");
     let timeElement = document.querySelector("#current-date-info")
-    let date = new Date(response.data.time * 1000);
     
-    //timeElement.innerHTML = formatDate(date); //Calling the function to display the current date.
+    
+    
     currentCity.innerHTML = data.city;
     temperatureElement.innerHTML = Math.round(data.temperature.current);
     humidityElement.innerHTML = `${data.temperature.humidity}%`;
@@ -20,9 +20,9 @@
     descriptionElement.innerHTML = data.condition.description;
     iconElement.setAttribute("src", data.condition.icon_url);
 
-    let timezone = moment.tz.guess(); // Attempting to detect timezone using Moment's guess
-    let formattedTime = moment().tz(timezone).format("dddd HH:mm");
-    timeElement.innerHTML = formattedTime;
+    let timezone = moment.tz.guess(); // Attempting to detect and display current data as per timezone using Moment's guess
+    let localTime = moment().tz(timezone).format("dddd HH:mm");
+    timeElement.innerHTML = localTime;
 
     getForecast(response.data.city);
 } 
@@ -47,28 +47,6 @@
   }
 
 
-// Function to format and display the current date and time.
-
-  /*function formatDate(date){
-
-    let day = date.getDay();  
-
-    days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    let newDay = days[day];
-  
-    let hours = date.getHours();
-    if (hours < 10){
-      hours = `0${hours}`;
-    }
-
-    let minutes = date.getMinutes();
-    if (minutes < 10){
-      minutes = `0${minutes}`;
-    }
-
-    return `${newDay} ${hours}:${minutes}`;
-
-  }*/
 
   function formatDay(timestamp){
     let date = new Date(timestamp * 1000);
