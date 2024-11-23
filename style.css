@@ -150,7 +150,7 @@ margin-top: 6px;
 
   .search-input {
     padding: 15px;
-    font-size: 10px;
+    font-size: 14px;
     width: 70%;
   }
 
@@ -161,7 +161,7 @@ margin-top: 6px;
   }
 
   .current-weather-details{
-    line-height: 14px;
+    line-height: 20px;
     font-size: 12px;
   }
 
@@ -171,9 +171,13 @@ margin-top: 6px;
   }
 
   .current-temperature-icon{
-    margin-right: -38px;
+    margin-right: -50px;
   }
   
+  .current-temperature-icon img{
+    width: 80px;
+    margin-top: 12px;
+  }
   .current-temperature-value {
     font-size: 82px;
     margin-left: 40px;
@@ -189,12 +193,17 @@ margin-top: 6px;
   }
 
   .weather-forecast{
-    margin-left: -12px; 
+    margin-left: -13px;
   }
   
   .weather-forecast-temperature{
-    padding: 0 10px;
+    padding: 0 8px;
+    font-size: 12px;
   }
-  
+
+  .weather-forecast img{
+    width: 60px;
+    margin: 10px 5px;
+  }
 }
  
