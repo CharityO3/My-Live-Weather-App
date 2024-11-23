@@ -13,6 +13,19 @@ main{
   padding: 30px 0;
 }
 
+a {
+  color: #885df1;
+  text-decoration: none;
+}
+
+footer {
+  border-top: 1px solid #f9f7fe;
+  color: rgba(39, 33, 66, 0.4);
+  text-align: center;
+  padding-top: 15px;
+  
+} 
+
 .weather-info{
   border-radius: 16px;
   padding: 30px;
@@ -106,7 +119,6 @@ margin-top: 6px;
 }
 
 .weather-forecast-icon{
-  width: 88px;
   height: 88px;
   display: block;
   width: 100%;
@@ -125,20 +137,66 @@ margin-top: 6px;
   padding: 0 10px;
 }
 
-a {
-  color: #885df1;
-  text-decoration: none;
-}
-
-footer {
-  border-top: 1px solid #f9f7fe;
-  color: rgba(39, 33, 66, 0.4);
-  text-align: center;
-  padding-top: 15px;
-  
-} 
-
 .code-credit{
   font-size: 12px;
+}
+
+@media(max-width: 576px){
+  .weather-info{
+    max-width: 95%;
+  }
+
+  .search-input {
+    padding: 15px;
+    font-size: 10px;
+    width: 70%;
+  }
+
+  .submit-button {
+    padding: 15px;
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  .current-weather-details{
+    font-weight: 400;
+    line-height: 18px;
+    font-size: 14px;
+  }
+
+  .current-city{
+    font-weight: 900;
+    font-size: 32px;
+  }
+
+  .current-temperature-icon{
+    width:80px;
+    height: 80px;
+    margin-right: -16px; 
+  }
+  
+  .current-temperature-value {
+    font-size: 55px;
+    margin-left: 20px;
+  }
+  
+  .current-temperature-unit {
+  font-size: 20px;
+  margin-top: 12px;
+  }
+
+  .weather-forecast-date{
+    font-size: 16px;
+    line-height: 16px;
+  }
+
+  .weather-forecast{
+    margin-left: -18px;
+  }
+  
+  .weather-forecast-temperature{
+    padding: 0 8px;
+  }
+  
 }
  

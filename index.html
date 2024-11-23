@@ -14,38 +14,38 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.46/moment-timezone-with-data-1970-2030.min.js"></script>
 </head>
 <body>
-  <div class="container">
-    <div class="weather-info">
-      <header>
-        <form id ="search-form">
-          <input class="search-input" type="search" placeholder="Enter a city.." required autofocus id ="search-city" autocomplete="off"/>
-          <input class="submit-button" type="Submit" value="Search" class="button"/> 
-        </form>
-      </header>
   
-      <main>
-        <div class="current-weather">
-          <div>
-            <h1 class="current-city" id ="current-city"></h1>
-            <p class="current-weather-details"><span id="current-date-info"></span>, <span id ="description"></span> <br>Humidity: <strong id = "humidity"></strong>, Wind: <strong id = "wind-speed"></strong>
-            </p>
-          </div>
-          <div class="current-temperature-info">
-            <div class="current-temperature-icon"><img id="temperature-icon"></div> 
-            <div class="current-temperature-value" id ="temperature-value"></div>
-            <div class="current-temperature-unit">°C</div>
-          </div>
-        </div>
-        <div class="weather-forecast" id="forecast"></div>
-      </main>
-  
-      <footer>
-        <p class="code-credit">
-        This project was coded by <a href="https://github.com/CharityO3" target="_blank">Charity Orhoridiohwo</a> and is open-sourced on <a href="https://github.com/CharityO3/My-Live-Weather-App" target="_blank">GitHub</a> and hosted on <a href="https://my-live-weather-app.netlify.app/" target="_blank">Netlify</a>
+<div class="weather-info">
+  <header>
+    <form id ="search-form">
+      <input class="search-input" type="search" placeholder="Enter a city.." required autofocus id ="search-city" autocomplete="off"/>
+      <input class="submit-button" type="Submit" value="Search" class="button"/> 
+    </form>
+  </header>
+
+  <main>
+    <div class="current-weather">
+      <div>
+        <h1 class="current-city" id ="current-city"></h1>
+        <p class="current-weather-details"><span id="current-date-info"></span>, <span id ="description"></span> <br>Humidity: <strong id = "humidity"></strong>, Wind: <strong id = "wind-speed"></strong>
         </p>
-      </footer>
+      </div>
+      <div class="current-temperature-info">
+        <div class="current-temperature-icon"><img id="temperature-icon"></div> 
+        <div class="current-temperature-value" id ="temperature-value"></div>
+        <div class="current-temperature-unit">°C</div>
+      </div>
     </div>
-  </div>
+    <div class="weather-forecast" id="forecast"></div>
+  </main>
+
+  <footer>
+    <p class="code-credit">
+    This project was coded by <a href="https://github.com/CharityO3" target="_blank">Charity Orhoridiohwo</a> and is open-sourced on <a href="https://github.com/CharityO3/My-Live-Weather-App" target="_blank">GitHub</a> and hosted on <a href="https://my-live-weather-app.netlify.app/" target="_blank">Netlify</a>
+    </p>
+  </footer>
+</div>
+  
 
   <script src="script.js"></script>
 </body>
