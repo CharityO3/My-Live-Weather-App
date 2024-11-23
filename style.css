@@ -160,8 +160,8 @@ margin-top: 6px;
 
   .current-weather-details{
     font-weight: 400;
-    line-height: 18px;
-    font-size: 14px;
+    line-height: 14px;
+    font-size: 12px;
   }
 
   .current-city{
@@ -186,8 +186,12 @@ margin-top: 6px;
   }
 
   .weather-forecast-date{
-    font-size: 16px;
-    line-height: 16px;
+    font-size: 18px;
+    line-height: 18px;
+  }
+
+  .weather-forecast-icon{
+    width: 110%;
   }
 
   .weather-forecast{
