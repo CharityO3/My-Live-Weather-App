@@ -175,8 +175,9 @@ margin-top: 6px;
   }
   
   .current-temperature-icon img{
-    width: 80px;
-    margin-top: 12px;
+    width: 70px;
+    height: 70px;
+    margin-top: 18px;
   }
   .current-temperature-value {
     font-size: 82px;
@@ -188,9 +189,9 @@ margin-top: 6px;
   margin-top: 10px;
   }
 
-  /* .weather-forecast-icon{ */
-    /* width: 50% */
-  /* } */
+  .weather-forecast-date{
+    font-size: 14px;
+  }
 
   .weather-forecast{
     margin-left: -10px;
@@ -204,6 +205,8 @@ margin-top: 6px;
 
   .weather-forecast img{
     margin: 0 auto;
+    width: 70px;
+    height: 70px
   }
 }
  
